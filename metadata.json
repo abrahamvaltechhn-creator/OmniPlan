@@ -1,0 +1,6 @@
+{
+  "name": "OmniPlan - Planificador Universal Inteligente",
+  "description": "Planificador digital interactivo, animado y adaptable a cualquier rubro con vistas Kanban, Calendario, Cronograma Gantt, Matriz de Prioridad, Hábitos y Analíticas.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
