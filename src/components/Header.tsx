@@ -23,19 +23,19 @@ export const Header: React.FC = () => {
   } = usePlanner();
 
   return (
-    <header className="h-14 glass border-b border-white/20 dark:border-slate-800/30 px-3 sm:px-5 flex items-center justify-between gap-2 sm:gap-4 z-30 shrink-0 select-none">
+    <header className="h-14 glass border-b border-slate-200/80 dark:border-slate-800/60 px-3 sm:px-5 flex items-center justify-between gap-2 sm:gap-4 z-30 shrink-0 select-none">
       {/* Zone 1: Sidebar Toggle + Brand */}
       <div className="flex items-center gap-2 sm:gap-3 shrink-0 min-w-0">
         <button
           onClick={toggleSidebar}
-          className="min-w-[38px] min-h-[38px] flex items-center justify-center p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-white/30 dark:hover:bg-slate-800/50 transition-colors glass"
+          className="min-w-[38px] min-h-[38px] flex items-center justify-center p-2 rounded-xl text-slate-700 dark:text-slate-300 bg-white/80 dark:bg-slate-800/60 border border-slate-200/90 dark:border-slate-700/60 hover:bg-white dark:hover:bg-slate-800 transition-colors"
           title={isSidebarOpen ? 'Ocultar barra lateral (⌘B)' : 'Mostrar barra lateral (⌘B)'}
           aria-label={isSidebarOpen ? 'Ocultar barra lateral' : 'Mostrar barra lateral'}
         >
           {isSidebarOpen ? (
-            <PanelLeftClose className="w-4 h-4" />
+            <PanelLeftClose className="w-4 h-4 hidden lg:block" />
           ) : (
-            <PanelLeft className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
+            <PanelLeft className="w-4 h-4 hidden lg:block text-indigo-600 dark:text-indigo-400" />
           )}
           <Menu className="w-5 h-5 lg:hidden" />
         </button>
@@ -52,28 +52,28 @@ export const Header: React.FC = () => {
       </div>
 
       {/* Zone 2: Utilities & Primary Action */}
-      <div className="flex items-center gap-1 sm:gap-2 shrink-0">
+      <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
         <button
           onClick={() => setSoundEnabled(!soundEnabled)}
-          className="min-h-[40px] min-w-[40px] flex items-center justify-center p-2 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-white/30 dark:hover:bg-slate-800/50 rounded-lg transition-colors glass"
+          className="min-h-[40px] min-w-[40px] flex items-center justify-center p-2 text-slate-700 dark:text-slate-300 bg-white/80 dark:bg-slate-800/60 border border-slate-200/90 dark:border-slate-700/60 hover:text-slate-900 dark:hover:text-white hover:bg-white dark:hover:bg-slate-800 rounded-lg transition-colors"
           title={soundEnabled ? 'Silenciar audio' : 'Activar audio'}
           aria-label={soundEnabled ? 'Silenciar audio' : 'Activar audio'}
         >
-          {soundEnabled ? <Volume2 className="w-4 h-4" /> : <VolumeX className="w-4 h-4 text-slate-400" />}
+          {soundEnabled ? <Volume2 className="w-4 h-4" /> : <VolumeX className="w-4 h-4 text-slate-500 dark:text-slate-400" />}
         </button>
 
         <button
           onClick={toggleDarkMode}
-          className="min-h-[40px] min-w-[40px] flex items-center justify-center p-2 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-white/30 dark:hover:bg-slate-800/50 rounded-lg transition-colors glass"
+          className="min-h-[40px] min-w-[40px] flex items-center justify-center p-2 text-slate-700 dark:text-slate-300 bg-white/80 dark:bg-slate-800/60 border border-slate-200/90 dark:border-slate-700/60 hover:text-slate-900 dark:hover:text-white hover:bg-white dark:hover:bg-slate-800 rounded-lg transition-colors"
           title={isDarkMode ? 'Modo claro' : 'Modo oscuro'}
           aria-label="Alternar modo oscuro"
         >
-          {isDarkMode ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-slate-600" />}
+          {isDarkMode ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-slate-700" />}
         </button>
 
         <button
           onClick={() => openTaskModal()}
-          className="min-h-[40px] flex items-center gap-1.5 px-3 sm:px-3.5 py-1.5 text-xs font-semibold text-white bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-700 hover:to-violet-700 active:from-indigo-800 active:to-violet-800 rounded-xl transition-all shadow-lg shadow-indigo-500/25 whitespace-nowrap shrink-0 active:scale-95"
+          className="min-h-[40px] flex items-center gap-1.5 px-3 sm:px-3.5 py-1.5 text-xs font-semibold text-white bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-700 hover:to-violet-700 active:from-indigo-800 active:to-violet-800 rounded-xl transition-all shadow-md shadow-indigo-500/25 whitespace-nowrap shrink-0 active:scale-95"
           aria-label="Crear nueva tarea"
         >
           <Plus className="w-4 h-4" />
